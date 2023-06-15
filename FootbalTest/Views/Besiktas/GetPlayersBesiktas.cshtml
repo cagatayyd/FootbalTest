@@ -1,0 +1,33 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-9">
+
+        </div>
+        <div class="col-3 text-right mt-3 mb-3">
+            <a href="@Url.Action("Create", "Besiktas")" class="btn btn-primary">Add Players to Besiktas</a>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Player Surname</th>
+                <th>Player Position</th>
+                <th>Player Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in Model)
+            {
+                <tr>
+                    <td>@player.Name</td>
+                    <td>@player.Surname</td>
+                    <td>@player.Position</td>
+                    <td>@player.Age</td>
+                    <td><a href="@Url.Action("Edit", "PSG", new { id = player.PlayerID })" class="btn btn-warning btn-sm text-white">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
